@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Search</title>
+</head>
+<body>
+<div style="text-align:center">
+<img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png">
+<form enctype="multipart/form-data" id="search_form" method="get" action="/search/">
+{% csrf_token %}
+
+    {% for field in search_form %}
+
+    <input type="submit" value="Search" id="search_button" />
+
+</form>
+</div>
+
+</body>
+</html>
