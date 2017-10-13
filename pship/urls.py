@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.views.generic import TemplateView
+
 from goog import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^search/(.*)?$', views.search_it)
+    url(r'^searchchoice/$', TemplateView.as_view(template_name='searchchoice.html'), name="choice"),
+    url(r'^search/.*$', views.process_search)
 ]
