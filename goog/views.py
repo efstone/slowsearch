@@ -21,7 +21,7 @@ def process_search(request):
     context = {}
     if request.method == 'GET':
         raw_uri = request.get_raw_uri()
-        search_url = re.search('(?:search).*', raw_uri).group()[7:]
+        search_url = re.search('(?:search/).*', raw_uri).group()[7:]
         # check to see if there's something besides /search
         if len(search_url) == 1:
             if search_url == '1' or search_url == '2':
