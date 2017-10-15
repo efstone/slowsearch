@@ -55,6 +55,8 @@ def process_search(request):
             page_content = result_page.content.decode(result_page.encoding)
             page_soup = BeautifulSoup(page_content, "html.parser")
             ser_soup = page_soup.find('div', id='res')
+            if ser_soup is None:
+                return render(request, "raw_page.html", {'source': 'There was an error retrieving search results.', 'load_delay': 0})
             links = [link['href'] for link in ser_soup.find_all('a', href=True)]
             ser_content = str(ser_soup)
             unique_links = set(links)
