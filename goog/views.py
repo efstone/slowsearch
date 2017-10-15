@@ -9,6 +9,7 @@ from urllib.parse import urljoin
 import re
 from django.utils.html import escape
 from django.utils import timezone as timezone
+from time import sleep
 # Create your views here.
 
 @login_required(login_url='/admin/login/')
@@ -66,7 +67,7 @@ def process_search(request):
         else:
             return render(request, "search_page.html", {'search_form': searchform})
         context = {'source': ser_content}
-
+        context['load_delay'] = Duration.objects.first().global_duration * 1000
 
         return render(request, "raw_page.html", context)
 
