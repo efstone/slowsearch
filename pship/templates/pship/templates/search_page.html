@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <title>Google Search</title>
 </head>
+<style>
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+form{
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    text-align: left;
+}
+</style>
 <body>
-<div style="text-align:center">
+<h1 align="center">
+    Search Engine {{ search_engine_choice }}
+</h1>
+
+<div style="display: block; text-align: center;">
 {#<img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png">#}
 
 <form enctype="multipart/form-data" id="search_form" method="post" action="/search/">
@@ -14,7 +32,7 @@
     {{ search_form }}
 
     <input hidden name="search_engine_choice" value="{{ search_engine_choice }}">
-    <input type="submit" value="Search" id="search_button"  />
+    <input type="submit" value="Search" id="search_button" style="margin: 0 auto;"  />
 
 </form>
 </div>
