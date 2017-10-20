@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Google Search</title>
+    <title>Search Experiment</title>
 </head>
 <style>
 input[type=text] {
@@ -19,7 +19,7 @@ form{
 }
 </style>
 <body>
-<h1 align="center">
+<h1 align="center" style="color:{% if search_engine_choice == '1' %}#8fbc8f;{% else %}#dc143c;{% endif %}">
     Search Engine {{ search_engine_choice }}
 </h1>
 

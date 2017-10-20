@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Google Search</title>
+    <title>Search Experiment</title>
 </head>
 <style>
 /* Center the loader */
@@ -72,6 +72,10 @@
 </div>
 
 <script>
+history.pushState(null, null, document.URL);
+window.addEventListener('popstate', function () {
+    history.pushState(null, null, document.URL);
+});
 var myVar;
 
 function myFunction() {

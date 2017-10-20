@@ -22,6 +22,7 @@ class Search(models.Model):
 
     class Meta:
         app_label = 'goog'
+        verbose_name_plural = 'Searches'
 
 
 class Duration(models.Model):
