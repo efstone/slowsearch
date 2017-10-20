@@ -4,8 +4,8 @@ from goog.models import *
 # Register your models here.
 
 class DurationAdmin(admin.ModelAdmin):
-    fields = ['global_duration']
-    list_display = ['global_duration']
+    fields = ['global_duration', 'search_engine_choice']
+    list_display = ['global_duration', 'search_engine_choice']
 
 
 class SearchAdmin(admin.ModelAdmin):
