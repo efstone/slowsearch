@@ -26,3 +26,4 @@ class Search(models.Model):
 
 class Duration(models.Model):
     global_duration = models.DecimalField(max_digits=4, decimal_places=2, default=0)
+    search_engine_choice = models.IntegerField(default=1)

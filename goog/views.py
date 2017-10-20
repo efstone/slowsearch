@@ -48,7 +48,7 @@ def process_search(request):
             search_text = searchform.cleaned_data['search_text']
             search_engine_choice = request.POST['search_engine_choice']
             cur_search = Search(student=request.user, search_term=search_text, search_timestamp=timezone.now(),
-                                duration_setting=Duration.objects.first().global_duration,
+                                duration_setting=Duration.objects.get(search_engine_choice=search_engine_choice).global_duration,
                                 search_engine_choice=int(search_engine_choice))
             cur_search.save()
             result_page = requests.get(google_root_url + search_text.replace(' ', '+'), headers)
@@ -69,7 +69,7 @@ def process_search(request):
         else:
             return render(request, "search_page.html", {'search_form': searchform})
         context = {'source': ser_content}
-        context['load_delay'] = Duration.objects.first().global_duration * 1000
+        context['load_delay'] = Duration.objects.get(search_engine_choice=search_engine_choice).global_duration * 1000
 
         return render(request, "raw_page.html", context)
 
