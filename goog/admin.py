@@ -9,8 +9,8 @@ class DurationAdmin(admin.ModelAdmin):
 
 
 class SearchAdmin(admin.ModelAdmin):
-    fields = ['student', 'search_term', 'search_url', 'search_timestamp', 'next_action_timestamp', 'duration_setting']
-    list_display = ['student', 'search_term', 'search_url', 'search_timestamp', 'next_action_timestamp', 'duration_setting']
+    fields = ['student', 'search_term', 'search_url', 'search_timestamp', 'next_action_timestamp', 'duration_setting', 'search_engine_choice']
+    list_display = ['student', 'search_term', 'search_url', 'search_timestamp', 'next_action_timestamp', 'duration_setting', 'search_engine_choice']
 
 
 admin.site.register(Duration, DurationAdmin)
