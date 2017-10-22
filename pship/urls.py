@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^searchchoice/$', TemplateView.as_view(template_name='searchchoice.html'), name="choice"),
     url(r'^search/.*$', views.process_search),
-    url(r'^$', RedirectView.as_view(url='search/', permanent=False))
+    url(r'^$', RedirectView.as_view(url='search/', permanent=False)),
+    url(r'^export_searches/$', views.export_searches)
 ]
