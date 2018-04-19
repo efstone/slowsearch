@@ -42,7 +42,7 @@ def process_search(request):
         context['search_form'] = SearchForm()
         return render(request, "search_page.html", context)
     else:
-        user_agent = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'
+        user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0'
         headers = {'User-Agent': user_agent}
         searchform = SearchForm(request.POST)
         if searchform.is_valid():
