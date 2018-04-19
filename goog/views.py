@@ -43,7 +43,7 @@ def process_search(request):
         return render(request, "search_page.html", context)
     else:
         user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0'
-        headers = {'User-Agent': user_agent}
+        headers = {'User-Agent': user_agent, 'Accept-Language': 'en-US,en'}
         searchform = SearchForm(request.POST)
         if searchform.is_valid():
             google_root_url = 'https://www.google.com/search?q='
